@@ -35,14 +35,14 @@ D1_q = round(D1 / N) * N;
 figure;
 imshow(log(1+abs(D1_q)),[]), title('Quantized DCT');
 
-%% 7. Відновлення після квантування
+%% 6. Відновлення після квантування
 I1_q_rec = idct2(D1_q);
 
 figure;
 subplot(1,2,1), imshow(I1_gray), title('Original');
 subplot(1,2,2), imshow(I1_q_rec,[]), title(['Restored, N=', num2str(N)]);
 
-%% 9. Квантування у просторі
+%% 7. Квантування у просторі
 n = 20;
 I_quant = round(double(I1_gray)/n)*n;
 
